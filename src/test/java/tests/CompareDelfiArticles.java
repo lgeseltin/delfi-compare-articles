@@ -57,6 +57,7 @@ public class CompareDelfiArticles {
         baseFunc.goToUrl(DESKTOP_URL);
         articleTitlesWeb = homePage.getAllArticleTitles(ARTICLE_WEB, TITLE_WEB);
         homePage.printArticleUrls(articleTitlesWeb);
+        Assert.assertNotNull(articleTitlesWeb);
     }
 
     @Test
@@ -64,6 +65,7 @@ public class CompareDelfiArticles {
         baseFunc.goToUrl(DESKTOP_URL);
         articleUrlsWeb = homePage.getAllArticleUrls(ARTICLE_WEB, TITLE_WEB);
         homePage.printArticleUrls(articleUrlsWeb);
+        Assert.assertNotNull(articleUrlsWeb);
     }
 
     @Test
@@ -71,6 +73,7 @@ public class CompareDelfiArticles {
         baseFunc.goToUrl(MOBILE_URL);
         articleTitlesMob = homePage.getAllArticleTitles(ARTICLE_MOB, TITLE_MOB);
         homePage.printArticleUrls(articleTitlesMob);
+        Assert.assertNotNull(articleTitlesMob);
     }
 
     @Test
@@ -78,6 +81,7 @@ public class CompareDelfiArticles {
         baseFunc.goToUrl(MOBILE_URL);
         articleUrlsMob = homePage.getAllArticleUrls(ARTICLE_MOB, TITLE_MOB);
         homePage.printArticleUrls(articleUrlsMob);
+        Assert.assertNotNull(articleUrlsMob);
     }
 
     @Test
@@ -85,6 +89,7 @@ public class CompareDelfiArticles {
         baseFunc.goToUrl(DESKTOP_URL);
         articleTitlesWeb = homePage.getFirstFiveArticleTitles(ARTICLE_WEB, TITLE_WEB);
         homePage.printArticleUrls(articleTitlesWeb);
+        Assert.assertNotNull(articleTitlesWeb);
     }
 
     @Test
@@ -92,6 +97,7 @@ public class CompareDelfiArticles {
         baseFunc.goToUrl(DESKTOP_URL);
         articleUrlsWeb = homePage.getFirstFiveArticleUrls(ARTICLE_WEB, TITLE_WEB);
         homePage.printArticleUrls(articleUrlsWeb);
+        Assert.assertNotNull(articleUrlsWeb);
     }
 
     @Test
@@ -99,6 +105,7 @@ public class CompareDelfiArticles {
         baseFunc.goToUrl(MOBILE_URL);
         articleTitlesMob = homePage.getFirstFiveArticleTitles(ARTICLE_MOB, TITLE_MOB);
         homePage.printArticleUrls(articleTitlesMob);
+        Assert.assertNotNull(articleTitlesMob);
     }
 
     @Test
@@ -106,6 +113,7 @@ public class CompareDelfiArticles {
         baseFunc.goToUrl(MOBILE_URL);
         articleUrlsMob = homePage.getFirstFiveArticleUrls(ARTICLE_MOB, TITLE_MOB);
         homePage.printArticleUrls(articleUrlsMob);
+        Assert.assertNotNull(articleUrlsMob);
     }
 
     @Test
@@ -113,6 +121,7 @@ public class CompareDelfiArticles {
         baseFunc.goToUrl(DESKTOP_URL);
         articleCommentsWeb = homePage.getFirstFiveArticleComments(ARTICLE_WEB, COMMENTS_WEB);
         homePage.printArticleComments(articleCommentsWeb);
+        Assert.assertNotNull(articleCommentsWeb);
     }
 
     @Test
@@ -120,6 +129,7 @@ public class CompareDelfiArticles {
         baseFunc.goToUrl(MOBILE_URL);
         articleCommentsMob = homePage.getFirstFiveArticleComments(ARTICLE_MOB, COMMENTS_MOB);
         homePage.printArticleComments(articleCommentsMob);
+        Assert.assertNotNull(articleCommentsMob);
     }
 
     @Test
@@ -190,22 +200,6 @@ public class CompareDelfiArticles {
         }
         LOGGER.info("Comparing article page comments count: " + commentCountArticlePage + " with article comment page comments count: " + commentCountCommentPage);
         Assert.assertEquals(commentCountArticlePage, commentCountCommentPage);
-    }
-
-    @Test
-    public void ensureArticleTitlesWebSameAsMobile() {
-        Assert.assertNotNull(articleTitlesWeb);
-        Assert.assertNotNull(articleTitlesMob);
-        LOGGER.info("[MOBILE] Comparing is Titles web array size equals Title mobile array size : " + articleTitlesWeb.size() + " : " + articleTitlesMob.size());
-        Assert.assertEquals(articleTitlesWeb, articleTitlesMob);
-    }
-
-    @Test
-    public void ensureSameSizeTitlesWithUrls() {
-        Assert.assertNotNull(articleTitlesWeb);
-        Assert.assertNotNull(articleUrlsWeb);
-        LOGGER.info("[WEB] Comparing is Titles web array size equals Urls array size : " + articleTitlesWeb.size() + " : " + articleUrlsWeb.size());
-        Assert.assertEquals(articleTitlesWeb.size(), articleUrlsWeb.size());
     }
 
     @After
